@@ -11,7 +11,7 @@ export default function Home() {
         muted
       >
         <source
-          src="/videos/banner-apart.mp4" // Aquí va el link de tu video
+          src="https://apartcdn.s3.sa-east-1.amazonaws.com/banner-apart.mp4" // Aquí va el link de tu video
           type="video/mp4"
         />
         Tu navegador no soporta el formato de video.
