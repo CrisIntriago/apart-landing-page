@@ -28,18 +28,17 @@ export default function Home() {
       </video>
 
       {/* Si el video está listo, puedes mostrar algo más o hacer alguna acción */}
-      {isVideoReady && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white flex flex-col items-center justify-center font-guru">
-          <p className="md:text-7xl text-5xl font-bold text-center">
-            LA REALIDAD ES FLEXIBLE
+
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white flex flex-col items-center justify-center font-guru">
+        <p className="md:text-7xl text-5xl font-bold text-center">
+          LA REALIDAD ES FLEXIBLE
+        </p>
+        <button className="border-2 border-white rounded-full mt-6 w-auto max-w-xs">
+          <p className="md:text-2xl text-lg p-3 px-10 font-bold text-center">
+            EMPIEZA AHORA
           </p>
-          <button className="border-2 border-white rounded-full mt-6 w-auto max-w-xs">
-            <p className="md:text-2xl text-lg p-3 px-10 font-bold text-center">
-              EMPIEZA AHORA
-            </p>
-          </button>
-        </div>
-      )}
+        </button>
+      </div>
 
       {/* Navbar encima del fondo */}
       <Navbar className="absolute top-0 left-0 w-full z-10" />
