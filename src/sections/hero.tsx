@@ -1,22 +1,12 @@
-'use client'
-import { useState } from "react";
-import Navbar from "../components/navbar";
-
 export default function Hero() {
-  const [isVideoReady, setIsVideoReady] = useState(false);
-
-  const handleCanPlay = () => {
-    setIsVideoReady(true);
-  };
 
   return (
-    <div className="relative min-h-screen">
+    <div className="h-full">
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+        className="top-0 left-0 w-full z-1"
         autoPlay
         loop
         muted
-        onCanPlay={handleCanPlay}
       >
         <source
           src="https://apartcdn.s3.sa-east-1.amazonaws.com/banner-apart.mp4"
@@ -24,6 +14,8 @@ export default function Hero() {
         />
         Tu navegador no soporta el formato de video.
       </video>
+
+
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white flex flex-col items-center justify-center font-guru">
         <p className="md:text-7xl text-5xl font-bold text-center">
           LA REALIDAD ES FLEXIBLE
@@ -33,6 +25,8 @@ export default function Hero() {
             EMPIEZA AHORA
           </p>
         </button>
+
+
       </div>
     </div>
   );
