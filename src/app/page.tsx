@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero/> ODIO A LOS NEGROS
+      <Hero/>
       <ForbesSection/>
       <SectionInformation image="https://apartcdn.s3.sa-east-1.amazonaws.com/henry_banner.mp4"eslogan={`"Si todos avanzan juntos, el éxito llega solo."`} autor="Henry Ford - Fundador de Ford Motor Company" descripcion="Aprende inglés en 
       grupos reducidos de máximo 6 estudiantes, con la atención personalizada de profesores altamente experimentados, 
