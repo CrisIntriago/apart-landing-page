@@ -3,12 +3,11 @@ interface SectionInformationProps {
     eslogan: string,
     autor: string,
     descripcion: string,
-    enlace: string,
     bgColor: string,
     inverted?: boolean,
 }
 
-const SectionInformation: React.FC<SectionInformationProps> = ({ image, eslogan, autor, descripcion, enlace, bgColor, inverted = false }) => {
+const SectionInformation: React.FC<SectionInformationProps> = ({ image, eslogan, autor, descripcion, bgColor, inverted = false }) => {
     return (
         <div
             className={`flex flex-col ${inverted ? 'md:flex-row-reverse' : 'md:flex-row'} items-center justify-center sm:h-[600px] h-[311px] w-full`}
