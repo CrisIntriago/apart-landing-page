@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <div className="h-screen flex flex-col items-center justify-center">
       <video className="absolute top-0 left-0 w-full h-full object-cover z-0" autoPlay loop muted>
-        <source src="https://apartcdn.s3.sa-east-1.amazonaws.com/banner-apart.mp4" type="video/mp4" />
+        <source src={`${process.env.CDN_URL}banner-apart.mp4`} type="video/mp4" />
         Tu navegador no soporta el formato de video.
       </video>
 

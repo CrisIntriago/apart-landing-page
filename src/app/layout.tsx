@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Apart - La realidad es flexible",
   description: "Cambia tu vida, aprende inglés",
   openGraph: {
-    images: 'https://apartcdn.s3.sa-east-1.amazonaws.com/BannerApart3.webp',
+    images: `${process.env.CDN_URL}BannerApart2.png`,
   }
 };
 
