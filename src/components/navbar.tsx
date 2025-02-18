@@ -36,14 +36,34 @@ export default function Navbar() {
             </div>
             {/* Menú móvil */}
             {isMenuOpen && (
-                <div className="absolute top-16 left-0 w-full bg-gray-800 text-white flex flex-col items-center space-y-4 py-4 sm:hidden">
-                    <a href="#" className="hover:text-gray-400">Misión</a>
-                    <a href="#" className="hover:text-gray-400">Historia</a>
-                    <a href="#" className="hover:text-gray-400">Contacto</a>
+                <div
+                className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-lg flex justify-start items-start px-8 pt-6 transition-opacity duration-300 ease-in-out"
+                onClick={() => setIsMenuOpen(false)}
+            >
+                <div
+                    className="bg-transparent text-white flex flex-col space-y-6"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    <div className="flex items-center justify-between">
+                        <Link href={"/"}>
+                            <h1 className="sm:text-5xl text-3xl font-bold">APART</h1>
+                        </Link>
+                        <button className="text-3xl" onClick={() => setIsMenuOpen(false)}>
+                            ✕
+                        </button>
+                    </div>
+                    <div className="flex flex-col space-y-2 text-[#656565]">
+                        <a href="#" className="hover:text-gray-400">Misión</a>
+                        <a href="#" className="hover:text-gray-400">Historia</a>
+                        <a href="#" className="hover:text-gray-400">Contacto</a>
+                    </div>
                 </div>
+            </div>
             )}
         </nav>
 
     );
 };
+
+
 
