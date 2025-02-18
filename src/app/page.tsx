@@ -18,7 +18,8 @@ export default function Home() {
       <SectionInformation image="https://apartcdn.s3.sa-east-1.amazonaws.com/elon_banner.mp4" eslogan='“Si todos avanzan juntos, el éxito llega solo.”' autor="Elon Musk ~ Fundador de Tesla y SpaceX" descripcion="Aprende inglés en 
       grupos reducidos de máximo 6 estudiantes, con la atención personalizada de profesores altamente experimentados, 
       para maximizar tu aprendizaje y progreso."  bgColor="D1D1D1" inverted={false} />
-      <Hero key="hero2 "url="jeff_banner.mp4" title="¿NO SABES POR DONDE EMPEZAR?" buttonText="HAZ EL TEST" buttonLink="/henry_banner.mp4" />
+      <Hero key="hero2 "url="jeff_banner.mp4" title="¿NO SABES POR DONDE EMPEZAR?" buttonText="HAZ EL TEST" buttonLink="/test" />
+      <Footer />
     </>
   );
 }
