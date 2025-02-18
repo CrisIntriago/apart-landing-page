@@ -1,9 +1,7 @@
 import Hero from "@/sections/hero";
-import HeroBottom from "@/sections/heroBottom"
 import ForbesSection from "@/sections/forbes_section";
 import Footer from "@/sections/footer";
 import SectionInformation from "@/components/SectionsInformation";
-import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (

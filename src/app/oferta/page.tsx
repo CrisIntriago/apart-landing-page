@@ -1,5 +1,4 @@
 import Carousel from "@/components/Carousel"
-import Navbar from "@/components/Navbar"
 import Footer from "@/sections/footer"
 import Hero from "@/sections/hero"
 
