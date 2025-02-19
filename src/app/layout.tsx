@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/sections/footer";
+import Navbar from "@/components/navbar";
 
 
 export const metadata: Metadata = {
   title: "Apart - La realidad es flexible",
   description: "Cambia tu vida, aprende inglés",
   openGraph: {
-    images: `${process.env.CDN_URL}BannerApart2.png`,
+    images: `${process.env.NEXT_PUBLIC_CDN_URL}BannerApart2.png`,
   }
 };
 
