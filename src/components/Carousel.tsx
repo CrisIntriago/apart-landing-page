@@ -41,14 +41,14 @@ export default function Carousel({ slides }: CarouselProps) {
               </div>
 
               <div
-                className="flex flex-col items-center justify-center p-6 md:p-8 lg:p-10 min-h-72 md:min-h-80 lg:min-h-96 rounded-b-2xl text-black text-center"
+                className="flex flex-col items-start md:justify-center p-6 md:p-8 lg:p-10 min-h-72 md:min-h-80 lg:min-h-96 rounded-b-2xl text-black text-left"
                 style={{ backgroundColor: slide.color }}>
                 
                 <h2 className="text-lg md:text-xl font-bold">
                   Al terminar este módulo será capaz de:
                 </h2>
 
-                <ul className="list-disc list-inside mt-3 space-y-2 text-base md:text-lg text-center">
+                <ul className="list-disc list-inside mt-3 space-y-2 text-base md:text-lg text-left">
                   <li>Dialogar sobre temas cotidianos.</li>
                   <li>Interpretar expresiones comunes.</li>
                   <li>Formular preguntas esenciales.</li>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Apart - La realidad es flexible",
   description: "Cambia tu vida, aprende inglés",
   openGraph: {
-    images: `${process.env.CDN_URL}BannerApart2.png`,
+    images: `${process.env.NEXT_PUBLIC_CDN_URL}BannerApart2.png`,
   }
 };
 
@@ -21,6 +21,7 @@ export default function RootLayout({
       <body className="antialiased bg-[#EAEEFE] font-guru"
       >
         <Navbar />
+        <div id="menu-portal" />
         {children}
       </body>
     </html>
