@@ -4,6 +4,7 @@ import { questions } from '@/constants/constants';
 import { useRouter } from 'next/navigation';
 import ApartButton from '@/components/ApartButton';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import Image from 'next/image';
 
 type SelectedAnswers = {
   [key: number]: string;
@@ -44,15 +45,14 @@ const QuizModule = () => {
   return (
     <div className="div flex flex-col md:flex-row md:px-20  md:gap-x-20">
       <div className="md:w-1/2">
-        <img
+        <Image
           className="object-cover mx-auto"
           src={`${process.env.NEXT_PUBLIC_CDN_URL}${currentQuestion.image}`}
           alt="apart"
-          style={{
-            width: 'md:40vw',
-            height: 'md:50vh',
-          }}
+          width={400} 
+          height={300}
         />
+
       </div>
       <div className="md:w-1/2 flex flex-col justify-center items-center">
         <div className="w-full bg-gray-200 rounded-full">

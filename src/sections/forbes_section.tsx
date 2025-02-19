@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 export default function ForbesSection() {
     return (
         <section className="flex flex-col items-center justify-center w-full bg-white text-black
          md:h-[500px] h-250px py-16 relative">
-            <img 
+            <Image 
                 src="/images/forbes_logo.png" 
                 alt="forbes_logo" 
                 className="h-4 md:h-8 w-auto" 
