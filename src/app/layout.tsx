@@ -22,6 +22,7 @@ export default function RootLayout({
       <body className="antialiased bg-[#EAEEFE] font-guru"
       >
         <Navbar />
+        <div id="menu-portal" />
         {children}
       </body>
     </html>
