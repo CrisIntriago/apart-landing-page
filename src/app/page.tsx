@@ -2,11 +2,13 @@ import Hero from "@/sections/hero";
 import ForbesSection from "@/sections/forbes_section";
 import Footer from "@/sections/footer";
 import SectionInformation from "@/components/SectionsInformation";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
   return (
     <>
-      <Hero key="hero1" url="banner-apart.mp4" title="LA REALIDAD ES FLEXIBLE" buttonText="EMPIEZA AHORA" buttonLink="/oferta" isAbsolute= {true} />
+    <Navbar/>
+      <Hero key="hero1" url="banner-apart.mp4" title="LA REALIDAD ES FLEXIBLE." buttonText="EMPIEZA AHORA" buttonLink="/oferta" isAbsolute= {true} />
       <ForbesSection />
       <SectionInformation image="https://apartcdn.s3.sa-east-1.amazonaws.com/henry_banner.mp4" eslogan={`“Si todos avanzan juntos, el éxito llega solo.”`} autor="Henry Ford - Fundador de Ford Motor Company" descripcion="
       Aprende inglés en grupos reducidos de máximo 6 estudiantes, con la atención personalizada de profesores altamente experimentados, para maximizar tu aprendizaje y progreso.”" bgColor="FAF5DA" inverted={false} />

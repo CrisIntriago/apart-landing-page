@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/navbar";
 
 
 export const metadata: Metadata = {
@@ -18,9 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-[#EAEEFE] font-guru"
+      <body className="antialiased bg-[#EAEEFE] font-guru h-dvh"
       >
-        <Navbar />
         <div id="menu-portal" />
         {children}
       </body>

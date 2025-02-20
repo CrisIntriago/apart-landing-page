@@ -1,5 +1,4 @@
 import Carousel from "@/components/Carousel"
-import Footer from "@/sections/footer"
 import Hero from "@/sections/hero"
 
 export default function Oferta() {
@@ -15,7 +14,6 @@ export default function Oferta() {
                     { title: "B2", description: "Descripción 3", color: "#D1D1D1" },
                 ]} />
             </div>
-            <Footer />
         </>
     )
 }
