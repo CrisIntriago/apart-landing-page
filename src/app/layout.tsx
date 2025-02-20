@@ -18,9 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-[#EAEEFE] font-guru"
+      <body className="antialiased bg-[#EAEEFE] font-guru h-dvh"
       >
-        <Navbar />
         <div id="menu-portal" />
         {children}
       </body>
