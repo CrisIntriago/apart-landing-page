@@ -139,7 +139,7 @@ const QuizModule = () => {
           />
           <div className="flex flex-col gap-y-6 w-full">
             {currentQuestion.options.map((option, index) => (
-              <div className='mx-6'>
+              <div className='mx-6' key={option}>
                 <ApartButton
                   key={index}
                   text={option}
