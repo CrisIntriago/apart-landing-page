@@ -1,4 +1,3 @@
-import Carousel from "@/components/Carousel"
 import Hero from "@/sections/hero"
 import { ClassCard } from "@/components/ClassCard";
 /*"use client" 
