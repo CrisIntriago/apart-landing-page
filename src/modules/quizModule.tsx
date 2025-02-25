@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import ApartButton from '@/components/ApartButton';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Link from 'next/link';
+import VideoComponent from '@/components/VideoComponent';
 
 type SelectedAnswers = {
   [key: number]: string;
@@ -43,12 +44,9 @@ const QuizModule = () => {
       <div className="div flex flex-col md:flex-row md:px-20  md:gap-x-20">
         <div className="md:w-1/2 flex flex-col items-center justify-center">
           <div className="md:w-1/2 flex flex-col justify-center">
-            <img
-              className="hidden md:block object-cover mx-auto min-w-[270px] h-[200px] md:w-[800px] md:h-[350px] justify-center items-center"
-              src={`${process.env.NEXT_PUBLIC_CDN_URL}assessment-images/cristiano_ronaldo.jpg`}
-              alt="apart"
-
-            />
+            <VideoComponent
+              url="last_test.webm"
+              className='hidden md:block object-cover mx-auto min-w-[270px] h-[200px] md:w-[800px] md:h-[350px] justify-center items-center' />
           </div>
         </div>
         <div className="md:w-1/2 flex flex-col justify-center items-left">
@@ -88,11 +86,9 @@ const QuizModule = () => {
               </Link>
 
             </div>
-            <img
+            <VideoComponent
               className="md:hidden object-cover mx-auto w-[270px] h-[200px] md:w-[600px] md:h-[500px] flex justify-center items-center pb-6"
-              src={`${process.env.NEXT_PUBLIC_CDN_URL}assessment-images/cristiano_ronaldo.jpg`}
-              alt="apart"
-
+              url="last_test.webm"
             />
 
           </div>

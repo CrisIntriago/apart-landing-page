@@ -35,7 +35,7 @@ const Payment: React.FC = () => {
 
   return (
     <>
-      <Hero url="landing-page/planes.mp4" title="La realidad es flexible" description="Prepárate para comenzar este viaje con nosotros. Explora nuestras diferentes opciones y elige la que mejor se adapte a tus necesidades." buttonLink="/" />
+      <Hero url="classes_payment.webm" title="La realidad es flexible" description="Prepárate para comenzar este viaje con nosotros. Explora nuestras diferentes opciones y elige la que mejor se adapte a tus necesidades." buttonLink="/" />
       <div className="flex flex-col items-center justify-center w-full h-auto bg-[#FAF5DA] py-16">
         <h3 className="text-black text-4xl font-semibold my-10">Clases Grupales</h3>
         <div className="flex flex-wrap justify-center gap-14 mb-8">
