@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Guru';
-  src: url('/fonts/guru-regular.otf') format('opentype');
+  font-family: "Guru";
+  src: url("/fonts/guru-regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Guru';
-  src: url('/fonts/guru-bold.otf') format('opentype');
+  font-family: "Guru";
+  src: url("/fonts/guru-bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
@@ -44,4 +44,3 @@ body {
 .swiper-button-next::after {
   color: black;
 }
-

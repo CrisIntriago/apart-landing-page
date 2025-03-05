@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-
 export const metadata: Metadata = {
   title: "Apart - La realidad es flexible",
   description: "Cambia tu vida, aprende inglés",
   openGraph: {
     images: `${process.env.NEXT_PUBLIC_CDN_URL}BannerApart2.png`,
-  }
+  },
 };
 
 export default function RootLayout({
@@ -17,8 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-[#EAEEFE] font-guru h-dvh"
-      >
+      <body className="antialiased bg-[#EAEEFE] font-guru h-dvh">
         <div id="menu-portal" />
         {children}
       </body>

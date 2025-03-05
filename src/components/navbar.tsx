@@ -71,7 +71,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>,
-          document.getElementById("menu-portal")!
+          document.getElementById("menu-portal")!,
         )}
     </nav>
   );

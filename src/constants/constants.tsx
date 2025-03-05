@@ -8,7 +8,7 @@ export type Question = {
 export const questions: Question[] = [
   {
     id: 1,
-    question: "You ___ be careful with your money.",
+    question: "You ___ be careful.",
     options: ["should", "can", "might"],
     image: "casey.webp",
   },
