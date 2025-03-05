@@ -33,11 +33,12 @@ export default function Hero({
         )}
         {buttonText && (
           <Link href={buttonLink}>
-            <button className="border-2 border-white rounded-full mt-6 w-auto max-w-xs">
+            <button className="border-2 border-white rounded-full mt-6 w-auto max-w-xs hover:bg-[#4d4d4d] transition-all duration-300">
               <p className="md:text-2xl text-lg p-3 px-10 font-bold text-center">
                 {buttonText}
               </p>
             </button>
+
           </Link>
         )}
       </div>
