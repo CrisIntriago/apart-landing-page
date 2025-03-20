@@ -3,10 +3,12 @@ import ForbesSection from "@/sections/forbes_section";
 import Footer from "@/sections/footer";
 import SectionInformation from "@/components/SectionsInformation";
 import Navbar from "@/components/navbar";
+import { OverlayComponent } from "@/components/animations/overlayComponent";
 
 export default function Home() {
   return (
     <>
+      <OverlayComponent/>
       <Navbar />
       <Hero
         key="hero1"
