@@ -11,6 +11,7 @@ const VideoSection: React.FC = () => {
         muted
         playsInline
         webkit-playsinline
+        style={{ userSelect: 'none' }}
       />
     </div>
   );
