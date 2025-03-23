@@ -20,14 +20,14 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
     if (videoRef.current) {
       const videoElement = videoRef.current;
       const playVideo = () => {
-        videoElement.play(); // Inicia la reproducción del video
+        videoElement.play(); 
       };
 
-      // Si el retraso es mayor que 0, se establece un retraso con setTimeout
       if (delay > 0) {
         const timeoutId = setTimeout(playVideo, delay);
         return () => clearTimeout(timeoutId); // Limpiar el timeout si el componente se desmonta
       } else {
+
         playVideo(); // Si no hay retraso, se inicia inmediatamente
       }
     }
@@ -39,6 +39,9 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
       className={`${className} ${rounded ? "rounded-3xl" : ""} pointer-events-none`}
       loop
       muted
+      playsInline
+      webkit-playsinline
+      style={{ userSelect: 'none' }}
     >
       <source
         src={`${process.env.NEXT_PUBLIC_CDN_URL + url}`}

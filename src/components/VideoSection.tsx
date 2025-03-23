@@ -9,6 +9,8 @@ const VideoSection: React.FC = () => {
         autoPlay
         loop
         muted
+        playsInline
+        webkit-playsinline
       />
     </div>
   );
