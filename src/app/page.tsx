@@ -1,16 +1,17 @@
-import Hero from "@/sections/hero";
 import ForbesSection from "@/sections/forbes_section";
 import Footer from "@/sections/footer";
 import SectionInformation from "@/components/SectionsInformation";
 import Navbar from "@/components/navbar";
 import { OverlayComponent } from "@/components/animations/overlayComponent";
+import HeroPrincipal from "@/sections/heroPrincipal";
+import Hero from "@/sections/hero";
 
 export default function Home() {
   return (
     <>
-      <OverlayComponent/>
+      <OverlayComponent />
       <Navbar />
-      <Hero
+      <HeroPrincipal
         key="hero1"
         url="hero.webm"
         title="LA REALIDAD ES FLEXIBLE."
@@ -20,6 +21,7 @@ export default function Home() {
       />
       <ForbesSection />
       <SectionInformation
+        key="section1"
         image="every_body_advances.webp"
         eslogan={`“Si todos avanzan juntos, el éxito llega solo.”`}
         autor="Henry Ford - Fundador de Ford Motor Company"
@@ -29,6 +31,7 @@ export default function Home() {
         inverted={false}
       />
       <SectionInformation
+        key="section2"
         image="tech_advance.webm"
         eslogan="“Cada avance tecnológico es una oportunidad para superar límites y reimaginar el futuro.”"
         autor="Jeff Bezos ~ Fundador de Amazon"
@@ -38,6 +41,7 @@ export default function Home() {
         textWhite={true}
       />
       <SectionInformation
+        key="section3"
         image="mac_image.webp"
         eslogan="“Si todos avanzan juntos, el éxito llega solo.”"
         autor="Elon Musk ~ Fundador de Tesla y SpaceX"

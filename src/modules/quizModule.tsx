@@ -13,6 +13,7 @@ const QuizModule = () => {
   const router = useRouter();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswers, setSelectedAnswers] = useState<SelectedAnswers>({});
+  const [fade, setFade] = useState<boolean>(false); // Estado para controlar el fade
 
   const handleAnswerClick = (answer: string) => {
     setSelectedAnswers((prevAnswers) => ({
@@ -20,7 +21,14 @@ const QuizModule = () => {
       [currentQuestionIndex]: answer,
     }));
 
-    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+    // Iniciar fadeout
+    setFade(true);
+
+    setTimeout(() => {
+      // Después de 600ms (tiempo de la animación fadeout), pasar a la siguiente pregunta
+      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      setFade(false); // Iniciar fadein
+    }, 600); // Esto debe coincidir con la duración del fadeout
   };
 
   const handleBackClick = () => {
@@ -41,12 +49,18 @@ const QuizModule = () => {
   }
 
   return (
-    <QuestionComponent
-      progressPercentage={progressPercentage}
-      question={currentQuestion}
-      handleBackClick={handleBackClick}
-      handleAnswerClick={handleAnswerClick}
-    />
+    <div
+      className={`transition-opacity duration-500 ${
+        fade ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      <QuestionComponent
+        progressPercentage={progressPercentage}
+        question={currentQuestion}
+        handleBackClick={handleBackClick}
+        handleAnswerClick={handleAnswerClick}
+      />
+    </div>
   );
 };
 

@@ -8,16 +8,16 @@ export const OverlayComponent = () => {
     useEffect(() => {
         gsap.to(".counter", {
             opacity: 0,
-            duration: 0.25,
-            delay: 3.5,
+            duration: 0.5,
+            delay: 1.3,
             visibility: "hidden",
         });
 
         gsap.to(".overlay", {
             height: 0,                 
             y: -200,                   
-            duration: 1.5,             
-            delay: 3.5,                
+            duration: 1,             
+            delay: 1.5,                
             ease: "power4.inOut",      
           });
 

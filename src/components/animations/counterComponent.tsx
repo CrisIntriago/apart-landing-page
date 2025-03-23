@@ -1,37 +1,36 @@
-"use client"
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const CounterComponent = () => {
+const Counter = () => {
     const [currentValue, setCurrentValue] = useState(0);
-
-    const updateCounter = () => {
-        if (currentValue === 100) return;
-
-        let newValue = currentValue + Math.floor(Math.random() * 10) + 1;
-        if (newValue > 100) newValue = 100;
-
-        setCurrentValue(newValue);
-    };
+    const targetValue = 100; // El valor al que queremos llegar
 
     useEffect(() => {
-        const counterElement = document.querySelector('.counter');
-        const interval = setInterval(() => {
-            updateCounter();
-            if (counterElement) {
-                counterElement.textContent = currentValue.toString();
-            }
-        }, Math.floor(Math.random() * 200) + 50);
+        const startTime = Date.now(); // Hora de inicio
+        const duration = 1300; // Duración en milisegundos (2 segundos)
 
-        return () => clearInterval(interval);
-    }, [currentValue]);
+        const updateCounter = () => {
+            const elapsedTime = Date.now() - startTime; // Tiempo transcurrido
+            const progress = Math.min(elapsedTime / duration, 1); // Progreso de 0 a 1
+
+            const newValue = Math.floor(progress * targetValue); // Calcular el nuevo valor de manera lineal
+            setCurrentValue(newValue);
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter); // Continuar hasta llegar a 100
+            }
+        };
+
+        requestAnimationFrame(updateCounter);
+
+        // Cleanup: Cuando el componente se desmonte, limpiamos cualquier efecto residual.
+        return () => setCurrentValue(0);
+    }, []); // Este useEffect solo se ejecuta una vez al montar el componente
 
     return (
         <div className="counter fixed top-0 left-0 w-full h-full flex justify-end items-end z-[10000] text-[#bcbbcc] pr-5 pb-5" style={{ fontSize: '20vw' }}>
-            {currentValue}
+            {currentValue}%
         </div>
-
-
     );
 };
 
-export default CounterComponent;
+export default Counter;

@@ -1,13 +1,32 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import gsap from "gsap";  // Importa GSAP
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    // Aplica la animación a la navbar al montarse el componente
+    gsap.fromTo(
+      ".navbar",  // Selecciona el navbar para animarlo
+      {
+        opacity: 0,  // Empieza con opacidad 0
+        y: -20,      // Empieza desde un desplazamiento hacia arriba
+      },
+      {
+        delay:2.5,
+        opacity: 1,  // Termina con opacidad 1
+        y: 0,        // Termina en su posición original
+        duration: 1, // Duración de la animación en segundos
+        ease: "power3.out", // Tipo de animación suave
+      }
+    );
+  }, []);  // Se ejecuta solo una vez cuando el componente se monta
+
   return (
-    <nav className="absolute top-0 left-0 w-full z-10 flex items-center justify-between lg:px-32 py-4 font-guru lg:text-lg text-lg border-b-2 border-white px-4 text-white">
+    <nav className="navbar absolute top-0 left-0 w-full z-10 flex items-center justify-between lg:px-32 py-4 font-guru lg:text-lg text-lg border-b-2 border-white px-4 text-white">
       <Link href={"/"}>
         <div className="flex items-center space-x-10">
           <h1 className="sm:text-5xl text-3xl font-bold">APART</h1>
@@ -71,7 +90,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>,
-          document.getElementById("menu-portal")!,
+          document.getElementById("menu-portal")!
         )}
     </nav>
   );

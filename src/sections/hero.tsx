@@ -20,10 +20,10 @@ export default function Hero({
 }: VideoProps) {
   return (
     <div
-      className={`${isAbsolute ? "" : "relative"} h-screen flex flex-col items-center justify-center`}
+      className={`${isAbsolute ? "" : "relative"} h-dvh flex flex-col items-center justify-center`}
     >
       <VideoComponent
-        className={`absolute top-0 left-0 w-full h-full object-cover z-0`}
+        className={`absolute top-0 left-0 w-full h-dvh object-cover z-0`}
         url={url}
       />
       <div className="relative inset-0 flex flex-col items-center justify-center text-white font-guru z-10">
