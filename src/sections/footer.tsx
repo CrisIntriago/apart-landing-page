@@ -36,11 +36,11 @@ export default function Footer() {
 
       <div className="overflow-hidden h-[150px] md:h-[210px]">
         <p
-          className="font-bold text-[#FAF5DA] leading-none text-[120px] md:text-[350px] overflow-hidden"
-          style={{ clipPath: "inset(0 0 40% 0)" }}
+          className=" font-bold text-[#FAF5DA] leading-none text-[120px] md:text-[350px] overflow-hidden md:clip-path-[inset(0_0_40%_0)]"
         >
           APART
         </p>
+
       </div>
     </footer>
   );

@@ -26,7 +26,7 @@ export default function Navbar() {
   }, []);  // Se ejecuta solo una vez cuando el componente se monta
 
   return (
-    <nav className="navbar absolute top-0 left-0 w-full z-10 flex items-center justify-between lg:px-32 py-4 font-guru lg:text-lg text-lg border-b-2 border-white px-4 text-white">
+    <nav className="bg-black bg-opacity-40 navbar fixed top-0 left-0 w-full z-10 flex items-center justify-between lg:px-32 py-3 font-guru lg:text-lg text-lg border-b-2 border-white px-4 text-white">
       <Link href={"/"}>
         <div className="flex items-center space-x-10">
           <h1 className="sm:text-5xl text-3xl font-bold">APART</h1>
@@ -56,7 +56,7 @@ export default function Navbar() {
         typeof document !== "undefined" &&
         createPortal(
           <div
-            className="fixed inset-0 z-50 w-full h-full bg-black bg-opacity-70 backdrop-blur-lg flex flex-col px-0 pt-7 transition-opacity duration-300 ease-in-out"
+            className="fixed inset-0 z-50 w-full h-screen bg-black bg-opacity-70 backdrop-blur-lg flex flex-col px-0 pt-4 transition-opacity duration-300 ease-in-out"
             onClick={() => setIsMenuOpen(false)}
           >
             <div
@@ -66,7 +66,7 @@ export default function Navbar() {
               {/* Encabezado con título y botón de cierre */}
               <div className="flex items-center justify-between w-full">
                 <Link href={"/"}>
-                  <h1 className="sm:text-5xl text-3xl font-bold pl-6">APART</h1>
+                  <h1 className="sm:text-5xl text-6xl font-bold pl-4">APART</h1>
                 </Link>
                 <button
                   className="text-3xl pr-6"
@@ -76,8 +76,8 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Opciones del menú */}
-              <div className="flex flex-col space-y-2 text-[#656565] pl-6">
+              {/* Opciones del menú hamburguesa*/}
+              <div className="flex flex-col space-y-4 text-gray-300 pl-8 text-xl pt-4 " >
                 <a href="#" className="hover:text-gray-300">
                   Misión
                 </a>
