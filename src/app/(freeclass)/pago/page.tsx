@@ -1,6 +1,6 @@
 
 "use client"
-import React from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation"; // Use useSearchParams from next/navigation
 import PaymentForm from "@/components/PaymentForm";
 import CarrouselPayment from "@/components/CarrouselPayment";
@@ -40,15 +40,21 @@ const FreeClass = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen h-screen bg-[#FAF5DA]">
-      <h1 className="bg-black w-full lg:px-32 py-3 text-4xl font-bold text-[#FAF5DA]">
-        <a href="/">APART</a>
-      </h1>
-      <div className="flex sm:flex-row h-full">
-        <CarrouselPayment />
-        <PaymentForm paymentType={selectedPaymentType} />
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="flex flex-col min-h-screen h-screen bg-[#FAF5DA]">
+        <h1 className="bg-black w-full lg:px-32 py-3 text-4xl font-bold text-[#FAF5DA]">
+          <a href="/">APART</a>
+        </h1>
+        <div className="flex sm:flex-row h-full">
+          <Suspense fallback={<div>Loading Carousel...</div>}>
+            <CarrouselPayment />
+          </Suspense>
+          <Suspense fallback={<div>Loading Payment Form...</div>}>
+            <PaymentForm paymentType={selectedPaymentType} />
+          </Suspense>
+        </div>
       </div>
-    </div>
+    </Suspense>
   );
 };
 
