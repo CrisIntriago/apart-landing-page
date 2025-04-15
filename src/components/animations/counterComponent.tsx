@@ -27,7 +27,7 @@ const Counter = () => {
     }, []); // Este useEffect solo se ejecuta una vez al montar el componente
 
     return (
-        <div className="counter fixed top-0 left-0 w-full h-full flex justify-end items-end z-[10000] text-[#bcbbcc] pr-5 pb-5" style={{ fontSize: '20vw' }}>
+        <div className="counter fixed top-0 left-0 w-full h-full flex justify-end items-end z-[10000] text-[#FAF5DA] pr-5 pb-5" style={{ fontSize: '20vw' }}>
             {currentValue}%
         </div>
     );

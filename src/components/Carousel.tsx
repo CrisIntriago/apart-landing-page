@@ -5,6 +5,8 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import ApartButton from "./ApartButton";
+import { useRouter } from "next/navigation";
+
 interface SlideContent {
   title: string;
   description: string;
@@ -16,6 +18,7 @@ interface CarouselProps {
 }
 
 export default function Carousel({ slides }: CarouselProps) {
+  const router = useRouter();
   return (
     <div className="w-full px-6 md:px-12 lg:px-24">
       <Swiper
@@ -59,12 +62,11 @@ export default function Carousel({ slides }: CarouselProps) {
                 </div>
 
                 <div className="w-full flex justify-start">
-                  <div className="w-3/4">
-
+                  <div className="w-2/4">
                     <ApartButton
-                      text="Comprar"
+                      text="Más información"
                       tipo="ternary"
-                      onClick={() => { }}
+                      onClick={() => {  router.push("/cursos")}}
                     />
                   </div >
                 </div>

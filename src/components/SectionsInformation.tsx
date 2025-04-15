@@ -83,11 +83,11 @@ const SectionInformation: React.FC<SectionInformationProps> = ({
           overflow: "hidden", // Aseguramos que no haya overflow no deseado en el texto
         }}
       >
-        <h1 className="text-2xl md:text-5xl font-bold font-family-display">
+        <h1 className="text-2xl md:text-5xl font-bold">
           {eslogan}
         </h1>
-        <p className="text-lg md:text-xl font-family-display pt-2">{autor}</p>
-        <p className="text-base md:text-base pt-8 text-justify md:px-12 px-10">
+        <p className="text-lg md:text-xl pt-2 text-playfair">{autor}</p>
+        <p className="text-base md:text-base pt-8 text-justify md:px-12 px-10  text-playfair">
           {descripcion}
         </p>
       </div>

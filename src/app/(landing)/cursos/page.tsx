@@ -1,5 +1,6 @@
 import Hero from "@/sections/hero";
 import { ClassCard } from "@/components/ClassCard";
+import { paymentTypes } from "@/constants/constants"; 
 
 interface TarjetaProps {
   title: string;
@@ -8,6 +9,7 @@ interface TarjetaProps {
   bgColor: string;
   textColor: string;
   buttonType: "primary" | "secondary" | "ternary";
+  sendToUrl: string;
 }
 
 const grupales: TarjetaProps[] = [
@@ -19,10 +21,11 @@ const grupales: TarjetaProps[] = [
       "Acceso completo a la plataforma",
       "Horario flexible",
     ],
-    price: "$50",
     bgColor: "bg-[#151515]",
+    price: `$${paymentTypes.GRUPAL_BASICO.price}`,    
     textColor: "text-white",
     buttonType: "secondary",
+    sendToUrl: paymentTypes.GRUPAL_BASICO.url
   },
   {
     title: "Intermedio",
@@ -32,10 +35,12 @@ const grupales: TarjetaProps[] = [
       "Acceso completo a la plataforma",
       "Horario flexible",
     ],
-    price: "$60",
+    price: `$${paymentTypes.GRUPAL_INTERMEDIO.price}`,    
     bgColor: "bg-[#151515]",
     textColor: "text-white",
     buttonType: "secondary",
+    sendToUrl: paymentTypes.GRUPAL_INTERMEDIO.url
+
   },
   {
     title: "Intensivo",
@@ -45,10 +50,12 @@ const grupales: TarjetaProps[] = [
       "Acceso completo a la plataforma",
       "Horario flexible",
     ],
-    price: "$70",
+    price: `$${paymentTypes.GRUPAL_INTENSIVO.price}`,    
     bgColor: "bg-[#151515]",
     textColor: "text-white",
     buttonType: "secondary",
+    sendToUrl: paymentTypes.GRUPAL_INTENSIVO.url
+
   },
 ];
 
@@ -61,10 +68,11 @@ const individuales: TarjetaProps[] = [
       "Acceso completo a la plataforma",
       "Horario flexible",
     ],
-    price: "$100",
+    price: `$${paymentTypes.INDIVIDUAL_BASICO.price}`,    
     bgColor: "bg-[#D1D1D1]",
     textColor: "text-black",
     buttonType: "ternary",
+    sendToUrl: paymentTypes.INDIVIDUAL_BASICO.url
   },
   {
     title: "Intermedio",
@@ -74,10 +82,11 @@ const individuales: TarjetaProps[] = [
       "Acceso completo a la plataforma",
       "Horario flexible",
     ],
-    price: "$110",
+    price: `$${paymentTypes.INDIVIDUAL_INTERMEDIO.price}`,    
     bgColor: "bg-[#D1D1D1]",
     textColor: "text-black",
     buttonType: "ternary",
+    sendToUrl: paymentTypes.INDIVIDUAL_INTERMEDIO.url
   },
   {
     title: "Intensivo",
@@ -87,10 +96,11 @@ const individuales: TarjetaProps[] = [
       "Acceso completo a la plataforma",
       "Horario flexible",
     ],
-    price: "$120",
+    price: `$${paymentTypes.INDIVIDUAL_INTENSIVO.price}`,    
     bgColor: "bg-[#D1D1D1]",
     textColor: "text-black",
     buttonType: "ternary",
+    sendToUrl: paymentTypes.INDIVIDUAL_INTENSIVO.url
   },
 ];
 
@@ -103,7 +113,7 @@ const Payment: React.FC = () => {
         description="Prepárate para comenzar este viaje con nosotros. Explora nuestras diferentes opciones y elige la que mejor se adapte a tus necesidades."
         buttonLink="/"
       />
-      <div className="flex flex-col items-center justify-center w-full h-auto bg-[#FAF5DA] py-16">
+      <div id= "cursos"className="flex flex-col items-center justify-center w-full h-auto bg-[#FAF5DA] py-16">
         <h3 className="text-black text-4xl font-semibold my-10">
           Clases Grupales
         </h3>

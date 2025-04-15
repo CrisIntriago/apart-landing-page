@@ -40,7 +40,7 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
       loop
       muted
       playsInline
-      webkit-playsinline
+      webkit-playsinline="true"
       style={{ userSelect: 'none' }}
     >
       <source

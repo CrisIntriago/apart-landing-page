@@ -16,7 +16,7 @@ export default function Home() {
         url="hero.webm"
         title="LA REALIDAD ES FLEXIBLE."
         buttonText="EMPIEZA AHORA"
-        buttonLink="/oferta"
+        buttonLink="/test"
         isAbsolute={true}
       />
       <ForbesSection />

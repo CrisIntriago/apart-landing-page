@@ -18,19 +18,19 @@ const ApartButton: React.FC<ButtonProps> = ({
   switch (tipo) {
     case "primary":
       buttonClass =
-        "w-full py-1 border border-white rounded-2xl bg-transparent hover:bg-black hover:text-white hover:border-white transition-colors duration-300"
+        "w-full py-1 border border-white rounded-2xl bg-transparent hover:bg-black hover:text-white hover:border-white transition-colors duration-500 ease-in-out transition-all" 
       break;
     case "secondary":
       buttonClass =
-        "text-bold w-full py-1 border border-white rounded-2xl bg-[#323232] hover:bg-black hover:text-white hover:border-white transition-colors duration-300"
+        "text-bold w-full py-1 border border-white rounded-2xl bg-[#323232] hover:bg-black hover:text-white hover:border-white transition-colors duration-500 ease-in-out transition-all"
       break;
     case "ternary":
       buttonClass =
-        "text-bold w-full text-white py-1 rounded-2xl bg-[#323232] hover:bg-black hover:text-white hover:border-white transition-colors duration-300"
+        "text-bold w-full text-white py-1 rounded-2xl bg-[#323232] hover:bg-black hover:text-white hover:border-white transition-colors duration-500 ease-in-out transition-all"
       break;
     default:
       buttonClass =
-        "w-full py-1 border border-white-500 rounded-2xl bg-transparent hover:bg-blue-500 hover:text-white transition-colors duration-300";
+        "w-full py-1 border border-white-500 rounded-2xl bg-transparent hover:bg-blue-500 hover:text-white transition-colors duration-500 ease-in-out transition-all";
       break;
   }
 

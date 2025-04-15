@@ -3,8 +3,18 @@ import React from "react";
 import ApartButton from "./ApartButton";
 import VideoComponent from "./VideoComponent";
 import { useRouter } from "next/navigation";
+import { paymentTypes } from "@/constants/constants";
 
-const ChooseOptionComponent: React.FC = () => {
+interface ChooseOptionProps {
+  level: string;
+}
+
+
+const ChooseOptionComponent: React.FC<ChooseOptionProps> = (
+  {
+    level
+  }
+) => {
   const router = useRouter();
   return (
     <div className="div flex flex-col lg:w-auto  lg:flex-row lg:px-10  lg:gap-x-20  lg:mx-0 lg:h-[350px]">
@@ -23,21 +33,19 @@ const ChooseOptionComponent: React.FC = () => {
 
           <div className="flex flex-col"></div>
           <p className="text-xl  md:text-left ">Nivel de inglés</p>
-          <p className="text-xl  md:text-left font-bold">A2</p>
+          <p className="text-xl  md:text-left font-bold">{level}</p>
           <p className="text-xlmd:text-left">Duración del módulo:</p>
           <p className="text-xl md:text-left font-bold pb-4 lg:pb-0">4 meses</p>
           <div className="w-full flex flex-col gap-y-3 px-6  pb-4 lg:pb-0">
             <ApartButton
               tipo="secondary"
-              onClick={() => router.push("/payment")}
+              onClick={() => router.push(`/pago?oferta=${paymentTypes.INDIVIDUAL_PRUEBA.url}`)}   text="Reserva clase de prueba"
+            />
+             <ApartButton
+              tipo="secondary"
+              onClick={() => router.push("/cursos")}
               bgColor=""
               text="Comprar"
-            />
-            <ApartButton
-              tipo="secondary"
-              onClick={() => router.push("/class")}
-              bgColor=""
-              text="Reserva clase de prueba"
             />
           </div>
 

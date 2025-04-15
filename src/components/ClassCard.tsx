@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import ApartButton from "./ApartButton";
+import {useRouter} from "next/navigation";
 
 interface ClassCardProps {
   title: string;
@@ -8,6 +9,8 @@ interface ClassCardProps {
   bgColor: string;
   textColor: string;
   buttonType: "primary" | "secondary" | "ternary";
+  sendToUrl: string;
+  
 }
 
 export const ClassCard: React.FC<ClassCardProps> = ({
@@ -17,7 +20,11 @@ export const ClassCard: React.FC<ClassCardProps> = ({
   bgColor,
   textColor,
   buttonType,
+  sendToUrl
 }) => {
+
+  const router= useRouter()
+
   return (
     <div
       className={`h-64 md:h-128 ${bgColor} ${textColor} p-8 mb-10 flex flex-col justify-between rounded-2xl shadow-lg`}
@@ -33,9 +40,8 @@ export const ClassCard: React.FC<ClassCardProps> = ({
 
         <ApartButton
           text="Comprar"
-          onClick={() => { }}
-          tipo={buttonType}
-        />
+          onClick={() => {router.push(`/pago?oferta=${sendToUrl}`)}}
+          tipo= {buttonType}/>
       </div>
     </div>
   );

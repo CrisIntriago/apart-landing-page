@@ -29,7 +29,7 @@ const QuestionComponent: React.FC<QuestionComponentsProps> = ({
         <div className="w-full">
           <div className="w-full bg-gray-200 rounded-full">
             <div
-              className="font-medium bg-[#996C52] text-xs  text-blue-100 text-center p-0.5 leading-none rounded-full"
+              className="hidden sm:block font-medium bg-[#996C52] text-xs  text-blue-100 text-center p-0.5 leading-none rounded-full"
               style={{ width: `${progressPercentage}%` }}
             ></div>
           </div>
@@ -44,14 +44,14 @@ const QuestionComponent: React.FC<QuestionComponentsProps> = ({
           </div>
         </div>
 
-        <p className="text-3xl text-center w-full">{question.question}</p>
+        <p className="text-2xl text-center w-full">{question.question}</p>
         <div className="w-full flex flex-col items-center justify-center">
           <img
             className="rounded-3xl lg:hidden lg:pt-0 pt-4 object-cover mx-auto w-[270px] h-[200px] lg:w-[600px] lg:h-[500px] flex justify-center items-center pb-6"
             src={`${process.env.NEXT_PUBLIC_CDN_URL}assessment-images/${question.image}`}
             alt="apart"
           />
-          <div className="flex flex-col gap-y-6 w-full">
+          <div className="flex flex-col gap-y-5 w-full mt-3">
             {question.options.map((option, index) => (
               <div className="mx-6 lg:mx-12" key={option}>
                 <ApartButton

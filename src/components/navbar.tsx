@@ -26,24 +26,25 @@ export default function Navbar() {
   }, []);  // Se ejecuta solo una vez cuando el componente se monta
 
   return (
-    <nav className="bg-black bg-opacity-40 navbar fixed top-0 left-0 w-full z-10 flex items-center justify-between lg:px-32 py-3 font-guru lg:text-lg text-lg border-b-2 border-white px-4 text-white">
+    <nav className="bg-black bg-opacity-40 navbar fixed top-0 left-0 w-full z-10 flex items-center justify-between lg:px-32 py-3 lg:text-lg text-lg border-b-2 border-white px-4 text-white">
       <Link href={"/"}>
-        <div className="flex items-center space-x-10">
+        <div className="flex items-center space-x-10 font-guru">
           <h1 className="sm:text-5xl text-3xl font-bold">APART</h1>
         </div>
       </Link>
 
       {/* Menú de navegación en escritorio */}
       <div className="hidden md:flex items-center sm:space-x-28">
-        <a href="#" className="hover:text-gray-400 flex items-center space-x-4">
-          <span>Misión</span>
-        </a>
-        <a href="#" className="hover:text-gray-400 flex items-center space-x-4">
-          <span>Historia</span>
-        </a>
-        <a href="#" className="hover:text-gray-400 flex items-center space-x-1">
-          <span>Contacto</span>
-        </a>
+        <Link href={"/cursos"}>
+          <div className="hover:text-gray-400 flex items-center space-x-4">
+            <p>Cursos</p>
+          </div>
+        </Link>
+        <Link href={"/niveles"}>
+          <div className="hover:text-gray-400 flex items-center space-x-4">
+            <p>Niveles</p>
+          </div>
+        </Link>
       </div>
       {/* Botón de hamburguesa */}
       <div className="md:hidden flex items-center">

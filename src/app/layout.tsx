@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-[#EAEEFE] font-guru">
+      <body className="antialiased bg-[#EAEEFE]">
         <div id="menu-portal" />
         {children}
       </body>

@@ -16,6 +16,9 @@
   font-style: normal;
 }
 
+/* Importa la fuente Playfair Display desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -31,7 +34,11 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Playfair Display", serif; /* Cambio aquí */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Guru", sans-serif; /* Títulos con la fuente Guru */
 }
 
 @layer utilities {
@@ -42,5 +49,5 @@ body {
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  color: black;
+  display: none;
 }

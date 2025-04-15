@@ -3,31 +3,142 @@ export type Question = {
   question: string;
   options: string[];
   image: string;
+  weight: number;
+  correctAnswer: string;
 };
 
 export const questions: Question[] = [
   {
     id: 1,
-    question: "You ___ be careful.",
-    options: ["should", "can", "might"],
+    question: "What is the past tense of the verb 'go'?",
+    options: ["goed", "went", "gone", "going"],
     image: "casey.webp",
+    weight: 1,
+    correctAnswer: "went",
   },
   {
     id: 2,
-    question: "She enjoys ___ books in her free time.",
-    options: ["should", "can", "might"],
+    question: "Choose the correct sentence:",
+    options: ["He can sings well.", "He can sing well.", "He can to sing well.", "He can singing well."],
     image: "jordan.webp",
+    weight: 1,
+    correctAnswer: "He can sing well.",
   },
   {
     id: 3,
-    question: "If I had known you were coming, I __ a cake.",
-    options: ["should", "can", "might"],
+    question: "What does the word 'fortunate' mean?",
+    options: ["Unlucky", "Lucky", "Sad", "Angry"],
     image: "cristiano_ronaldo.jpg",
+    weight: 1,
+    correctAnswer: "Lucky",
   },
   {
     id: 4,
-    question: "If I __ you, I would take that job.",
-    options: ["should", "can", "might"],
+    question: "Select the correct preposition: 'I am interested ___ learning English.'",
+    options: ["in", "on", "at", "about"],
     image: "steve_concreto.jpg",
+    weight: 1,
+    correctAnswer: "in",
+  },
+  {
+    id: 5,
+    question: "Which of these words is an adjective?",
+    options: ["Quickly", "Run", "Beautiful", "Swim"],
+    image: "casey.webp",
+    weight: 1,
+    correctAnswer: "Beautiful",
+  },
+  {
+    id: 6,
+    question: "Choose the correct form of the verb for this sentence: 'She ___ to the store every Saturday.'",
+    options: ["go", "goes", "is go", "going"],
+    image: "jordan.webp",
+    weight: 2,
+    correctAnswer: "goes",
+  },
+  {
+    id: 7,
+    question: "Choose the correct word to complete the sentence: 'I’ve never ___ to Japan.'",
+    options: ["been", "go", "going", "went"],
+    image: "cristiano_ronaldo.jpg",
+    weight: 2,
+    correctAnswer: "been",
+  },
+  {
+    id: 8,
+    question: "Which of the following sentences is in the future tense?",
+    options: ["I am studying English right now.", "I studied English yesterday.", "I will study English tomorrow.", "I study English every day."],
+    image: "steve_concreto.jpg",
+    weight: 2,
+    correctAnswer: "I will study English tomorrow.",
+  },
+  {
+    id: 9,
+    question: "Complete the sentence with the correct word: '___ you like tea?'",
+    options: ["Do", "Are", "Did", "Have"],
+    image: "casey.webp",
+    weight: 2,
+    correctAnswer: "Do",
+  },
+  {
+    id: 10,
+    question: "What does the phrase 'life-changing experience' refer to?",
+    options: ["A small problem", "An event that significantly changes your life", "A regular event", "A random event"],
+    image: "jordan.webp",
+    weight: 3,
+    correctAnswer: "An event that significantly changes your life",
   },
 ];
+
+export interface PaymentType {
+  code: string;
+  price: number;
+  url: string;
+  title: string,
+  subtitle?: string,
+}
+
+export const paymentTypes: Record<string, PaymentType> = {
+  INDIVIDUAL_PRUEBA: {
+    code: "INDIVIDUAL_PRUEBA",
+    price: 7,
+    url: "individual_prueba",
+    title: "Clase de prueba individual"
+  },
+  GRUPAL_BASICO: {
+    code: "GRUPAL_BASICO",
+    price: 50,
+    url: "grupal_basico",
+    title: "Únete al curso básico"
+  },
+  GRUPAL_INTERMEDIO: {
+    code: "GRUPAL_INTERMEDIO",
+    price: 60,
+    url: "grupal_intermedio",
+    title: "Únete al curso intermedio"
+  },
+  GRUPAL_INTENSIVO: {
+    code: "GRUPAL_INTENSIVO",
+    price: 70,
+    url: "grupal_intensivo",
+    title: "Únete al curso intensivo"
+  },
+  INDIVIDUAL_BASICO: {
+    code: "INDIVIDUAL_BASICO",
+    price: 100,
+    url: "individual_basico",
+    title: "Curso individual básico"
+  },
+  INDIVIDUAL_INTERMEDIO: {
+    code: "INDIVIDUAL_INTERMEDIO",
+    price: 110,
+    url: "individual_intermedio",
+    title: "Curso individual intermedio"
+  },
+  INDIVIDUAL_INTENSIVO: {
+    code: "INDIVIDUAL_INTENSIVO",
+    price: 120,
+    url: "individual_intensivo",
+    title: "Curso individual intensivo"
+  }
+};

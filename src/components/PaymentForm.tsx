@@ -1,83 +1,91 @@
 "use client";
 import React from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { PaymentType } from "@/constants/constants";
 
-const PaymentForm: React.FC = () => {
+interface PaymentFormProps {
+  paymentType: PaymentType;
+}
+
+const PaymentForm: React.FC<PaymentFormProps> = ({ paymentType }) => {
+  const amount = paymentType.price;
+
+  const createOrder = async (data: any, actions: any) => {
+    const response = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ amount }),
+    });
+
+    const orderData = await response.json();
+    return orderData;
+  };
+
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center w-full md:w-2/4 2xl:w-1/4 sm:w-full sm:px-4"
+      className="flex flex-col items-center justify-center w-full sm:w-full md:w-2/4 2xl:w-1/4"
       style={{ backgroundColor: "#FAF5DA" }}
     >
       <div className="p-6 space-y-6 overflow-auto">
-        <h2 className="text-center text-4xl font-bold text-black">
-          Clase de prueba
+        <h2 className="text-center text-3xl font-bold text-black ">
+          {paymentType.title}
         </h2>
 
-        <div className="flex justify-center space-x-10">
-          <button className="text-black py-2 px-4">Mañana</button>
-          <button className="text-black py-2 px-4">Tarde</button>
-          <button className="text-black py-2 px-4">Noche</button>
+        {paymentType.subtitle && (
+          <p className="text-black text-sm text-center">
+            {paymentType.subtitle}
+          </p>
+        )}
+        <div className="flex justify-center space-x-6 font-bold font-guru text-base">
+          <button className="text-black py-2 px-4 hover:underline">Mañana</button>
+          <button className="text-black py-2 px-4 hover:underline">Tarde</button>
+          <button className="text-black py-2 px-4 hover:underline">Noche</button>
         </div>
-
-        <hr className="border-black" />
 
         <div className="space-y-4">
           <input
             type="text"
-            placeholder="Nombre"
-            className="w-full py-3 px-3 rounded-3xl border border-gray-300 bg-black text-white"
+            placeholder="Nombre completo"
+            className="h-12 w-full  pl-5 text-sm rounded-3xl border bg-[#151515] text-white"
           />
           <input
             type="text"
-            placeholder="Teléfono"
-            className="w-full py-3 px-3 rounded-3xl border border-gray-300 bg-black text-white"
+            placeholder="Correo electrónico"
+            className="h-12 w-full  pl-5 rounded-3xl text-sm border bg-[#151515] text-white"
           />
         </div>
 
-        <div className="flex space-x-4">
-          <select className="flex-1 py-3 px-4 rounded-3xl border border-gray-300 bg-black text-white">
-            <option value="">País</option>
-            <option value="mx">Ecuador</option>
-          </select>
-          <select className="flex-1 py-3 px-4 rounded-3xl border border-gray-300 bg-black text-white">
-            <option value="">Nivel de idioma</option>
-            <option value="basico">A2</option>
-          </select>
-        </div>
-
-        <h1 className="text-center rounded-3xl border border-gray-300 p-4 bg-black text-white hover:shadow-lg">
-          Valor total $7.00
+        <h1 className="h-12 text-center flex items-center justify-center border border-gray-300 bg-black text-white hover:shadow-lg">
+          Valor total ${amount.toFixed(2)}
         </h1>
-
-        <button className="text-center rounded-3xl border border-gray-300 p-4 bg-gray-400 text-white w-full hover:shadow-lg">
-          Comprar
-        </button>
 
         <PayPalScriptProvider
           options={{
             clientId:
-              "AXapmy9MuHVi2MuNqazMH3Hcl7lqoD0KvuDxsv4DGfKhv-eGHBadcVmzSvTKqmj4gNqnyGZf237RgTaF",
+              process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID!,
+            "locale": "es_ES",
           }}
         >
           <PayPalButtons
-            style={{ layout: "vertical" }} // Puedes configurar el diseño de los botones si lo deseas
-            fundingSource="paypal" // Esto asegura que solo aparezca PayPal, no tarjetas
-
-            // createOrder={()=>{}}
-            // onCancel={()=>{}}
-            // onApprove={()=>{}}
+            style={{ layout: "vertical", label: "checkout" }}
+            fundingSource="paypal"
+            createOrder={createOrder}
+            onCancel={() => { console.log("Se canceló el pago") }}
           />
         </PayPalScriptProvider>
 
         <div className="flex items-center space-x-3">
           <input
-            type="checkbox"
-            className="rounded-full border-2 border-black w-5 h-5 appearance-none checked:bg-black checked:border-black"
+            type="radio"
+            className="rounded-full border-2 border-black w-5 h-5 "
           />
-          <label className="text-black text-md">
-            Acepto las normas de privacidad para uso del proceso de reservación
+          <label className="text-black text-sm">
+            Acepto las políticas de privacidad para el proceso de reservación
           </label>
         </div>
+
       </div>
     </div>
   );
