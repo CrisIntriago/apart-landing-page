@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { PaymentType } from "@/constants/constants";
 
@@ -8,9 +8,40 @@ interface PaymentFormProps {
 }
 
 const PaymentForm: React.FC<PaymentFormProps> = ({ paymentType }) => {
+
   const amount = paymentType.price;
 
+  type FormFields = {
+    nombre: string;
+    correo: string;
+    telefono: string;
+    acceptTerms: boolean;
+  }
+
+
+  const [nombre, setNombre] = useState('');
+  const [correo, setCorreo] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [isFormComplete, setIsFormComplete] = useState(false);
+  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [selectedDay, setSelectedDay] = useState("Mañana"); // Establecer "Mañana" como opción predeterminada
+
+  const handleOptionClick = (option: string) => {
+    setSelectedDay(option);
+  };
+
+  useEffect(() => {
+    if (nombre && correo && telefono && acceptTerms) {
+      setIsFormComplete(true);
+    } else {
+      setIsFormComplete(false);
+    }
+  }, [nombre, correo, telefono, acceptTerms]);
+
   const createOrder = async (data: any, actions: any) => {
+    console.log('Nombre:', nombre);
+    console.log('Correo:', correo);
+    console.log('Teléfono:', telefono);
     const response = await fetch('/api/checkout', {
       method: 'POST',
       headers: {
@@ -20,7 +51,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ paymentType }) => {
     });
 
     const orderData = await response.json();
-    return orderData;
+    return orderData.id;
   };
 
   return (
@@ -38,24 +69,62 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ paymentType }) => {
             {paymentType.subtitle}
           </p>
         )}
-        <div className="flex justify-center space-x-6 font-bold font-guru text-base">
-          <button className="text-black py-2 px-4 hover:underline">Mañana</button>
-          <button className="text-black py-2 px-4 hover:underline">Tarde</button>
-          <button className="text-black py-2 px-4 hover:underline">Noche</button>
+        <div className="flex justify-center space-x-6 font-bold font-guru text-base text-[#151515]">
+          <span
+            className={`cursor-pointer ${selectedDay === "Mañana" ? "underline" : ""}`}
+            onClick={() => handleOptionClick("Mañana")}
+            style={{
+              transition: "text-decoration 0.3s ease",
+            }}
+          >
+            Mañana
+          </span>
+          <span
+            className={`cursor-pointer ${selectedDay === "Tarde" ? "underline" : ""}`}
+            onClick={() => handleOptionClick("Tarde")}
+            style={{
+              transition: "text-decoration 0.3s ease", 
+            }}
+          >
+            Tarde
+          </span>
+          <span
+            className={`cursor-pointer ${selectedDay === "Noche" ? "underline" : ""}`}
+            onClick={() => handleOptionClick("Noche")}
+            style={{
+              transition: "text-decoration 0.3s ease", 
+            }}
+          >
+            Noche
+          </span>
         </div>
 
-        <div className="space-y-4">
-          <input
-            type="text"
-            placeholder="Nombre completo"
-            className="h-12 w-full  pl-5 text-sm rounded-3xl border bg-[#151515] text-white"
-          />
-          <input
-            type="text"
-            placeholder="Correo electrónico"
-            className="h-12 w-full  pl-5 rounded-3xl text-sm border bg-[#151515] text-white"
-          />
-        </div>
+          <form className="flex flex-col space-y-4">
+            <input
+              id="nombre"
+              type="text"
+              placeholder="Nombre completo"
+              className="h-12 w-full  pl-5 text-sm rounded-3xl border bg-[#151515] text-white"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+            />
+            <input
+              id="correo"
+              type="email"
+              placeholder="Correo electrónico"
+              className="h-12 w-full  pl-5 rounded-3xl text-sm border bg-[#151515] text-white"
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+            />
+            <input
+              id="telefono"
+              type="text"
+              placeholder="Número de teléfono"
+              className="h-12 w-full  pl-5 rounded-3xl text-sm border bg-[#151515] text-white"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
+            />
+          </form>
 
         <h1 className="h-12 text-center flex items-center justify-center border border-gray-300 bg-black text-white hover:shadow-lg">
           Valor total ${amount.toFixed(2)}
@@ -73,6 +142,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ paymentType }) => {
             fundingSource="paypal"
             createOrder={createOrder}
             onCancel={() => { console.log("Se canceló el pago") }}
+            disabled={!isFormComplete}
           />
         </PayPalScriptProvider>
 
@@ -80,9 +150,11 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ paymentType }) => {
           <input
             type="radio"
             className="rounded-full border-2 border-black w-5 h-5 "
+            checked={acceptTerms}
+            onChange={() => setAcceptTerms(!acceptTerms)}
           />
           <label className="text-black text-sm">
-            Acepto las políticas de privacidad para el proceso de reservación
+            Acepto los términos y condiciones para la compra del servicio.
           </label>
         </div>
 
