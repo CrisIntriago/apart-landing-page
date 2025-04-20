@@ -15,7 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
+      <head>
+        <meta name="google" content="notranslate" />
+        <meta charSet="UTF-8" />
+      </head>
       <body className="antialiased bg-[#EAEEFE]">
         <div id="menu-portal" />
         {children}

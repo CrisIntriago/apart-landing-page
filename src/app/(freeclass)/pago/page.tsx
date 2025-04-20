@@ -41,7 +41,7 @@ const FreeClassContent = () => {
 
   return (
     <div className="flex flex-col min-h-screen h-screen bg-[#FAF5DA]">
-      <h1 className="bg-black w-full lg:px-32 py-3 text-4xl font-bold text-[#FAF5DA]">
+      <h1 className="bg-black w-full lg:px-32 px-4 py-3 text-4xl font-bold text-[#FAF5DA]">
         <a href="/">APART</a>
       </h1>
       <div className="flex sm:flex-row h-full">

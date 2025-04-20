@@ -27,15 +27,14 @@ const ChooseOptionComponent: React.FC<ChooseOptionProps> = (
       </div>
       <div className="lg:w-1/2 flex flex-col justify-center items-center md:mx-0 mx-9">
         <div className="w-full flex flex-col items-center justify-center gap-y-1 lg:gap-y-4">
-          <p className="text-3xl md:text-4xl md:text-left font-bold lg:pb-0 pb-4">
+          <p className="text-3xl md:text-4xl text-center md:text-left font-bold lg:pb-0 pb-4">
             La realidad es flexible
           </p>
 
           <div className="flex flex-col"></div>
-          <p className="text-xl  md:text-left ">Nivel de inglés</p>
+          <p className="text-xl  md:text-left ">Nivel estimado de inglés:</p>
           <p className="text-xl  md:text-left font-bold">{level}</p>
-          <p className="text-xlmd:text-left">Duración del módulo:</p>
-          <p className="text-xl md:text-left font-bold pb-4 lg:pb-0">4 meses</p>
+          <p className="text-xlmd:text-left">Verifica tu nivel con nosotros:</p>
           <div className="w-full flex flex-col gap-y-3 px-6  pb-4 lg:pb-0">
             <ApartButton
               tipo="secondary"
@@ -45,7 +44,7 @@ const ChooseOptionComponent: React.FC<ChooseOptionProps> = (
               tipo="secondary"
               onClick={() => router.push("/cursos")}
               bgColor=""
-              text="Comprar"
+              text="Revisa cursos"
             />
           </div>
 

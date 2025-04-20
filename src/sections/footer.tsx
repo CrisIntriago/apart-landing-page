@@ -1,3 +1,5 @@
+import { socialMediaLinks } from "@/constants/constants";
+
 export default function Footer() {
   return (
     <footer className="bg-[#151515] text-white text-center pt-20">
@@ -7,7 +9,9 @@ export default function Footer() {
             Servicio al cliente y QA
           </h3>
           <p className="text-[#FAF5DA] text-[8px] sm:text-xs md:text-sm">
-            Contáctanos
+            <a href={socialMediaLinks.whatsapp} className="hover:underline" target="_blank" rel="noopener noreferrer">
+              Contáctanos
+            </a>
           </p>
         </div>
         <div className="w-1/3 flex flex-col items-center gap-1">
@@ -26,11 +30,12 @@ export default function Footer() {
             Lo genial
           </h3>
           <p className="text-[#FAF5DA] text-[8px] sm:text-xs md:text-sm">
-            Instagram
+            <a href={socialMediaLinks.instagram} className="hover:underline" target="_blank" rel="noopener noreferrer">Instagram</a>
           </p>
           <p className="text-[#FAF5DA] text-[8px] sm:text-xs md:text-sm">
-            Facebook
+            <a href={socialMediaLinks.whatsapp} className="hover:underline" target="_blank" rel="noopener noreferrer">Whatsapp</a>
           </p>
+
         </div>
       </div>
 

@@ -36,13 +36,14 @@ const QuizModule = () => {
     setTimeout(() => {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       setFade(false); // Iniciar fadein
-    }, 600); // Esto debe coincidir con la duración del fadeout
+    }, 800); // Esto debe coincidir con la duración del fadeout
   };
 
   const handleBackClick = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
     }
+    
   };
 
   const currentQuestion = questions[currentQuestionIndex];

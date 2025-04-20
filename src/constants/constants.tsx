@@ -39,12 +39,15 @@ export const questions: Question[] = [
     image: "steve_concreto.jpg",
     weight: 1,
     correctAnswer: "in",
-  },
+  }
+  ////// NECESITO NUEVAS IMAGENES PARA ESTAS PREGUNTAS //////
+  /// ME FALTAN 6 imagenes más
+  ,
   {
     id: 5,
     question: "Which of these words is an adjective?",
     options: ["Quickly", "Run", "Beautiful", "Swim"],
-    image: "casey.webp",
+    image: "jeff_bezos.webp",
     weight: 1,
     correctAnswer: "Beautiful",
   },
@@ -52,7 +55,7 @@ export const questions: Question[] = [
     id: 6,
     question: "Choose the correct form of the verb for this sentence: 'She ___ to the store every Saturday.'",
     options: ["go", "goes", "is go", "going"],
-    image: "jordan.webp",
+    image: "elon.webp",
     weight: 2,
     correctAnswer: "goes",
   },
@@ -60,7 +63,7 @@ export const questions: Question[] = [
     id: 7,
     question: "Choose the correct word to complete the sentence: 'I’ve never ___ to Japan.'",
     options: ["been", "go", "going", "went"],
-    image: "cristiano_ronaldo.jpg",
+    image: "jeff2.webp",
     weight: 2,
     correctAnswer: "been",
   },
@@ -68,7 +71,7 @@ export const questions: Question[] = [
     id: 8,
     question: "Which of the following sentences is in the future tense?",
     options: ["I am studying English right now.", "I studied English yesterday.", "I will study English tomorrow.", "I study English every day."],
-    image: "steve_concreto.jpg",
+    image: "steve-markulla.webp",
     weight: 2,
     correctAnswer: "I will study English tomorrow.",
   },
@@ -76,7 +79,7 @@ export const questions: Question[] = [
     id: 9,
     question: "Complete the sentence with the correct word: '___ you like tea?'",
     options: ["Do", "Are", "Did", "Have"],
-    image: "casey.webp",
+    image: "jeff_blue_origin.webp",
     weight: 2,
     correctAnswer: "Do",
   },
@@ -84,7 +87,7 @@ export const questions: Question[] = [
     id: 10,
     question: "What does the phrase 'life-changing experience' refer to?",
     options: ["A small problem", "An event that significantly changes your life", "A regular event", "A random event"],
-    image: "jordan.webp",
+    image: "kanye_west.webp",
     weight: 3,
     correctAnswer: "An event that significantly changes your life",
   },
@@ -103,7 +106,7 @@ export const paymentTypes: Record<string, PaymentType> = {
     code: "INDIVIDUAL_PRUEBA",
     price: 7,
     url: "individual_prueba",
-    title: "Clase de prueba individual"
+    title: "Reserva tu clase de prueba",
   },
   GRUPAL_BASICO: {
     code: "GRUPAL_BASICO",
@@ -142,3 +145,9 @@ export const paymentTypes: Record<string, PaymentType> = {
     title: "Curso individual intensivo"
   }
 };
+
+export const socialMediaLinks = {
+  instagram: "https://wa.link/qdrqdz",
+  whatsapp: "https://wa.link/qdrqdz",
+  whatsapp_paid: "https://wa.link/dj10c6"
+}

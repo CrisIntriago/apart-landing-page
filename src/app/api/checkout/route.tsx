@@ -1,28 +1,6 @@
-import { ApiError, CheckoutPaymentIntent, Client, Environment, LogLevel, OrdersController } from '@paypal/paypal-server-sdk';
-import { NextResponse } from 'next/server';
-
-const clientId = process.env.PAYPAL_CLIENT_ID;
-const clientSecret = process.env.PAYPAL_CLIENT_SECRET;
-
-const client = new Client({
-  clientCredentialsAuthCredentials: {
-    oAuthClientId: clientId!,
-    oAuthClientSecret: clientSecret!
-  },
-  timeout: 0,
-  environment: Environment.Sandbox,
-  logging: {
-    logLevel: LogLevel.Info,
-    logRequest: {
-      logBody: true
-    },
-    logResponse: {
-      logHeaders: true
-    }
-  },
-});
-
-const ordersController = new OrdersController(client);
+import { NextResponse } from "next/server";
+import { ordersController } from "../client";
+import { ApiError, CheckoutPaymentIntent } from "@paypal/paypal-server-sdk";
 
 export async function POST(request: any) {
   const { amount } = await request.json(); 
@@ -50,7 +28,6 @@ export async function POST(request: any) {
 
   try {
     const { result, ...httpResponse } = await ordersController.createOrder(collect);
-    console.log(result);
     return NextResponse.json({
       id: result.id
     });
