@@ -13,7 +13,7 @@ export default function Test() {
   return (
     <>
       <Hero
-        url="secret_is_to_start.webm"
+        url="the_secret_is_to_start.mp4"
         title="El secreto para salir adelante es comenzar."
         description="Descubre tu nivel de inglés con este test, creado por expertos para ofrecerte un diagnóstico preciso de tus habilidades y necesidades lingüísticas."
         buttonText="HAZ EL TEST"

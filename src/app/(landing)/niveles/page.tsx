@@ -5,7 +5,7 @@ export default function Oferta() {
   return (
     <>
       <Hero
-        url="today_you_change.webm"
+        url="today_you_change.mp4"
         title="¿HOY CAMBIAS TU VIDA?"
         description="1.5 mil millones de personas alrededor del mundo hablan inglés, no creo que haga falta explicar más. "
         buttonText="EMPIEZA AHORA"

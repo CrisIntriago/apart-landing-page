@@ -104,43 +104,43 @@ export interface PaymentType {
 export const paymentTypes: Record<string, PaymentType> = {
   INDIVIDUAL_PRUEBA: {
     code: "INDIVIDUAL_PRUEBA",
-    price: 7,
+    price: 6.99,
     url: "individual_prueba",
     title: "Reserva tu clase de prueba",
   },
   GRUPAL_BASICO: {
     code: "GRUPAL_BASICO",
-    price: 50,
+    price: 49.99,
     url: "grupal_basico",
     title: "Únete al curso básico"
   },
   GRUPAL_INTERMEDIO: {
     code: "GRUPAL_INTERMEDIO",
-    price: 60,
+    price: 59.99,
     url: "grupal_intermedio",
     title: "Únete al curso intermedio"
   },
   GRUPAL_INTENSIVO: {
     code: "GRUPAL_INTENSIVO",
-    price: 70,
+    price: 69.99,
     url: "grupal_intensivo",
     title: "Únete al curso intensivo"
   },
   INDIVIDUAL_BASICO: {
     code: "INDIVIDUAL_BASICO",
-    price: 100,
+    price: 99.99,
     url: "individual_basico",
     title: "Curso individual básico"
   },
   INDIVIDUAL_INTERMEDIO: {
     code: "INDIVIDUAL_INTERMEDIO",
-    price: 110,
+    price: 109.99,
     url: "individual_intermedio",
     title: "Curso individual intermedio"
   },
   INDIVIDUAL_INTENSIVO: {
     code: "INDIVIDUAL_INTENSIVO",
-    price: 120,
+    price: 119.99,
     url: "individual_intensivo",
     title: "Curso individual intensivo"
   }

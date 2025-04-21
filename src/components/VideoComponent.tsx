@@ -40,12 +40,11 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
       loop
       muted
       playsInline
-      webkit-playsinline="true"
       style={{ userSelect: 'none' }}
     >
       <source
         src={`${process.env.NEXT_PUBLIC_CDN_URL + url}`}
-        type="video/webm"
+        type="video/mp4"
       />
       Tu navegador no soporta el formato de video.
     </video>

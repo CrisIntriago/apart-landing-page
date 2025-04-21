@@ -30,6 +30,11 @@ export async function POST(request: any) {
       template // HTML con los datos inyectados
     );
 
+    
+    ///////////////////////////////////////////
+    //////////// A ADMINISTRACIÓN le llega el correo con la información y el nivel estimado de la persona.
+
+
     console.log('Resultado de enviar correo:', emailResponse);
 
     return NextResponse.json({ emailStatus: emailResponse });

@@ -108,7 +108,7 @@ const Payment: React.FC = () => {
   return (
     <>
       <Hero
-        url="classes_payment.webm"
+        url="classes_payment.mp4"
         title="La realidad es flexible"
         description="Prepárate para comenzar este viaje con nosotros. Explora nuestras diferentes opciones y elige la que mejor se adapte a tus necesidades."
         buttonLink="/"

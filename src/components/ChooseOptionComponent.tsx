@@ -21,7 +21,7 @@ const ChooseOptionComponent: React.FC<ChooseOptionProps> = (
       <div className="lg:w-1/2 flex flex-col justify-center">
         <VideoComponent
           rounded={true}
-          url="last_test.webm"
+          url="last_test.mp4"
           className="hidden lg:block object-cover w-[270px] h-[200px] lg:w-[396px] lg:h-[350px] flex justify-center items-center"
         />
       </div>
@@ -50,7 +50,7 @@ const ChooseOptionComponent: React.FC<ChooseOptionProps> = (
 
           <VideoComponent
             rounded={true}
-            url="last_test.webm"
+            url="last_test.mp4"
             className="lg:hidden object-cover w-[270px] h-[200px] lg:w-[396px] lg:h-[350px] flex justify-center items-center"
           />
         </div>

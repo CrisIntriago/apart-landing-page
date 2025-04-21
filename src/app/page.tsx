@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       <HeroPrincipal
         key="hero1"
-        url="hero.webm"
+        url="hero.mp4"
         title="LA REALIDAD ES FLEXIBLE."
         buttonText="EMPIEZA AHORA"
         buttonLink="/test"
@@ -32,7 +32,7 @@ export default function Home() {
       />
       <SectionInformation
         key="section2"
-        image="tech_advance.webm"
+        image="tech_advance.mp4"
         eslogan="“Cada avance tecnológico es una oportunidad para superar límites y reimaginar el futuro.”"
         autor="Jeff Bezos ~ Fundador de Amazon"
         descripcion="El aprendizaje de inglés en línea se lleva a cabo en nuestra plataforma digital, que te ofrece acceso a una amplia variedad de lecciones interactivas, actividades dinámicas y ejercicios diseñados para reforzar tus conocimientos de manera práctica, llevamos el conocimiento al alcance de tus manos, sin barreras ni límites."
@@ -51,7 +51,7 @@ export default function Home() {
       />
       <Hero
         key="hero2 "
-        url="where_to_begin.webm"
+        url="where_to_begin.mp4"
         title="¿NO SABES POR DONDE EMPEZAR?"
         buttonText="HAZ EL TEST"
         buttonLink="/test"
