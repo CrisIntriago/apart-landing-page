@@ -26,7 +26,7 @@ export default function Navbar() {
   }, []);  // Se ejecuta solo una vez cuando el componente se monta
 
   return (
-    <nav className="bg-black bg-opacity-40 navbar fixed top-0 left-0 w-full z-10 flex items-center justify-between lg:px-32 py-3 lg:text-lg text-lg border-b-2 border-white px-4 text-white">
+    <nav className="bg-black bg-opacity-40 navbar fixed top-0 left-0 w-full z-10 flex items-center justify-between lg:px-32 py-3 lg:text-lg text-lg border-b-2 border-white px-4 text-white opacity-0">
       <Link href={"/"}>
         <div className="flex items-center space-x-10 font-guru">
           <h1 className="sm:text-5xl text-3xl font-bold">APART</h1>
