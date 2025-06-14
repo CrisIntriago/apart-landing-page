@@ -18,6 +18,7 @@ export default function Test() {
         description="Descubre tu nivel de inglés con este test, creado por expertos para ofrecerte un diagnóstico preciso de tus habilidades y necesidades lingüísticas."
         buttonText="HAZ EL TEST"
         buttonLink="/test/diagnostico"
+        placeholderUrl="the_secret_is_to_start_poster.webp"
       />
     </>
   );

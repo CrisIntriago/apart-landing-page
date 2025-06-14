@@ -2,14 +2,12 @@ import ForbesSection from "@/sections/forbes_section";
 import Footer from "@/sections/footer";
 import SectionInformation from "@/components/SectionsInformation";
 import Navbar from "@/components/navbar";
-import { OverlayComponent } from "@/components/animations/overlayComponent";
 import HeroPrincipal from "@/sections/heroPrincipal";
 import Hero from "@/sections/hero";
 
 export default function Home() {
   return (
     <>
-      <OverlayComponent />
       <Navbar />
       <HeroPrincipal
         key="hero1"
@@ -18,6 +16,7 @@ export default function Home() {
         buttonText="EMPIEZA AHORA"
         buttonLink="/test"
         isAbsolute={true}
+        placeholderUrl="apart-landing-poster.webp"
       />
       <ForbesSection />
       <SectionInformation
@@ -55,6 +54,7 @@ export default function Home() {
         title="¿NO SABES POR DONDE EMPEZAR?"
         buttonText="HAZ EL TEST"
         buttonLink="/test"
+        placeholderUrl="where_to_begin_poster.webp"
       />
       <Footer />
     </>

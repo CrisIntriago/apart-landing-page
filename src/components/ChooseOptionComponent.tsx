@@ -51,6 +51,7 @@ const ChooseOptionComponent: React.FC<ChooseOptionProps> = (
           <VideoComponent
             rounded={true}
             url="last_test.mp4"
+            placeholderUrl="last_test_poster.webp"
             className="lg:hidden object-cover w-[270px] h-[200px] lg:w-[396px] lg:h-[350px] flex justify-center items-center"
           />
         </div>

@@ -112,6 +112,7 @@ const Payment: React.FC = () => {
         title="La realidad es flexible"
         description="Prepárate para comenzar este viaje con nosotros. Explora nuestras diferentes opciones y elige la que mejor se adapte a tus necesidades."
         buttonLink="/"
+        placeholderUrl="classes_payment_poster.webp"
       />
       <div id= "cursos"className="flex flex-col items-center justify-center w-full h-auto bg-[#FAF5DA] py-16">
         <h3 className="text-black text-4xl font-semibold my-10">

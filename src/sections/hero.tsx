@@ -8,6 +8,7 @@ interface VideoProps {
   buttonText?: string;
   buttonLink: string;
   isAbsolute?: boolean;
+  placeholderUrl?: string;
 }
 
 export default function Hero({
@@ -17,6 +18,7 @@ export default function Hero({
   buttonText,
   buttonLink,
   isAbsolute = false,
+  placeholderUrl,
 }: VideoProps) {
   return (
     <div
@@ -25,6 +27,7 @@ export default function Hero({
       <VideoComponent
         className={`absolute top-0 left-0 w-full h-full object-cover z-0`}
         url={url}
+        placeholderUrl={placeholderUrl}
       />
       <div className="relative inset-0 flex flex-col items-center justify-center text-white font-guru z-10">
         <p className="md:text-7xl text-5xl font-bold text-center">{title}</p>
