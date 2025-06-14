@@ -12,6 +12,7 @@ interface SectionInformationProps {
   bgColor: string;
   inverted?: boolean;
   textWhite?: boolean;
+  lazyLoad?: boolean;
 }
 
 const SectionInformation: React.FC<SectionInformationProps> = ({
@@ -22,6 +23,7 @@ const SectionInformation: React.FC<SectionInformationProps> = ({
   bgColor,
   inverted = false,
   textWhite = false,
+  lazyLoad = false,
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null); // Refs para cada sección
 
@@ -69,10 +71,14 @@ const SectionInformation: React.FC<SectionInformationProps> = ({
             src={`${process.env.NEXT_PUBLIC_CDN_URL + image}`}
             alt="Section"
             className="w-full h-full object-cover section-content"
-            style={{ objectFit: "cover" }} // Se asegura que la imagen cubra todo el contenedor
+            style={{ objectFit: "cover" }}
+            loading={lazyLoad ? "lazy" : "eager"}
           />
         ) : (
-          <VideoComponent url={image} className="w-full h-full object-cover section-content" />
+          <VideoComponent
+            url={image}
+            className="w-full h-full object-cover section-content"
+          />
         )}
       </div>
       <div
