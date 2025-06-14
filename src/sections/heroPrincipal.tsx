@@ -64,8 +64,9 @@ export default function HeroPrincipal({
 
   return (
     <div className={`${isAbsolute ? "" : "relative"} min-h-screen flex flex-col items-center justify-center`}>
-      <div className="absolute top-0 left-0 w-full min-h-screen object-cover z-0">
+      <div>
         <VideoComponent
+          className = "absolute top-0 left-0 w-full min-h-screen object-cover z-0"
           url={url}
           placeholderUrl={placeholderUrl} // Usa el placeholderUrl como poster
         />
