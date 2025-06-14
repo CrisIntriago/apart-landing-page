@@ -28,6 +28,7 @@ export default function Home() {
       Aprende inglés en grupos reducidos de máximo 6 estudiantes, con la atención personalizada de profesores altamente experimentados, para maximizar tu aprendizaje y progreso.”"
         bgColor="FAF5DA"
         inverted={false}
+        lazyLoad={true}
       />
       <SectionInformation
         key="section2"
@@ -38,6 +39,7 @@ export default function Home() {
         bgColor="5B473C"
         inverted={true}
         textWhite={true}
+        lazyLoad={true}
       />
       <SectionInformation
         key="section3"
@@ -47,6 +49,7 @@ export default function Home() {
         descripcion="Aprende desde cualquier lugar con clases online inmersivas adaptadas a tus necesidades. Combinamos el aprendizaje de gramática con películas y contenido de los creadores más populares de habla inglesa, brindándote una experiencia innovadora y efectiva."
         bgColor="D1D1D1"
         inverted={false}
+        lazyLoad={true}
       />
       <Hero
         key="hero2 "

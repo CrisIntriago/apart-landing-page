@@ -36,10 +36,10 @@ export default function HeroPrincipal({
           opacity: 0, // Comienza invisible
         },
         {
-          delay: 2, // Añadir un pequeño retraso antes de la animación
+          delay: 1, // Añadir un pequeño retraso antes de la animación
           y: 0, // Finaliza en su posición original
           opacity: 1, // Se vuelve completamente visible
-          duration: 1, // Duración de la animación
+          duration:1, // Duración de la animación
           ease: "power3.out", // Tipo de easing para la animación
         }
       );
@@ -54,7 +54,7 @@ export default function HeroPrincipal({
         },
         {
           opacity: 1, // Se vuelve completamente visible
-          duration: 1, // Duración de la animación
+          duration: 0.2, // Duración de la animación
           delay: 1.2,
           ease: "power3.out", // Tipo de easing para la animación
         }

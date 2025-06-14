@@ -16,7 +16,7 @@ export default function Navbar() {
         y: -20,      // Empieza desde un desplazamiento hacia arriba
       },
       {
-        delay:2.5,
+        delay:1.5,
         opacity: 1,  // Termina con opacidad 1
         y: 0,        // Termina en su posición original
         duration: 1, // Duración de la animación en segundos
