@@ -29,19 +29,11 @@ export default function HeroPrincipal({
   useEffect(() => {
     // Animación de reveal para el título
     if (titleRef.current) {
+      // Mantener el texto visible pero no animado
       gsap.fromTo(
         titleRef.current,
-        {
-          y: -100, // Comienza desplazado hacia arriba
-          opacity: 0, // Comienza invisible
-        },
-        {
-          delay: 1, // Añadir un pequeño retraso antes de la animación
-          y: 0, // Finaliza en su posición original
-          opacity: 1, // Se vuelve completamente visible
-          duration:1, // Duración de la animación
-          ease: "power3.out", // Tipo de easing para la animación
-        }
+        { y: -100, opacity: 0 }, // Empieza desde arriba sin ser invisible
+        { y: 0, opacity: 1 , duration: 1, ease: "power3.out" , delay:1}
       );
     }
 
@@ -49,14 +41,12 @@ export default function HeroPrincipal({
     if (buttonRef.current) {
       gsap.fromTo(
         buttonRef.current,
+        { opacity: 0 },
         {
-          opacity: 0, // Comienza invisible
-        },
-        {
-          opacity: 1, // Se vuelve completamente visible
-          duration: 0.2, // Duración de la animación
+          opacity: 1,
+          duration: 0.2,
           delay: 1.2,
-          ease: "power3.out", // Tipo de easing para la animación
+          ease: "power3.out",
         }
       );
     }
@@ -66,7 +56,7 @@ export default function HeroPrincipal({
     <div className={`${isAbsolute ? "" : "relative"} min-h-screen flex flex-col items-center justify-center`}>
       <div>
         <VideoComponent
-          className = "absolute top-0 left-0 w-full min-h-screen object-cover z-0"
+          className="absolute top-0 left-0 w-full min-h-screen object-cover z-0"
           url={url}
           placeholderUrl={placeholderUrl} // Usa el placeholderUrl como poster
         />
