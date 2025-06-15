@@ -79,7 +79,7 @@ export const questions: Question[] = [
     id: 9,
     question: "Complete the sentence with the correct word: '___ you like tea?'",
     options: ["Do", "Are", "Did", "Have"],
-    image: "Cristiano+opcion2.webp",
+    image: "Cristiano+opcion+2.webp",
     weight: 2,
     correctAnswer: "Do",
   },
