@@ -115,16 +115,6 @@ const Payment: React.FC = () => {
         placeholderUrl="classes_payment_poster.webp"
       />
       <div id= "cursos"className="flex flex-col items-center justify-center w-full h-auto bg-[#FAF5DA] py-16">
-        <h3 className="text-black text-4xl font-semibold my-10">
-          Clases Grupales
-        </h3>
-        <div className="flex flex-wrap justify-center gap-14 mb-8">
-          {grupales.map((item, index) => (
-            <ClassCard key={index} {...item} />
-          ))}
-        </div>
-
-        <div className="w-full h-[1px] bg-slate-600 mb-8"></div>
 
         <h3 className="text-black text-4xl font-semibold my-10">
           Clases Individuales
