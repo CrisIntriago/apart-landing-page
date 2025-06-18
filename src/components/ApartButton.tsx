@@ -26,7 +26,7 @@ const ApartButton: React.FC<ButtonProps> = ({
       break;
     case "ternary":
       buttonClass =
-        "text-bold w-full text-white py-1 rounded-2xl bg-[#323232] hover:bg-black hover:text-white hover:border-white transition-colors duration-500 ease-in-out transition-all"
+        "text-bold px-3 text-white py-1 rounded-2xl bg-[#323232] hover:bg-black hover:text-white hover:border-white transition-colors duration-500 ease-in-out transition-all"
       break;
     default:
       buttonClass =

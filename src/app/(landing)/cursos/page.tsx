@@ -64,8 +64,6 @@ const individuales: TarjetaProps[] = [
     title: "Básico",
     description: [
       "8 clases mensuales",
-      "Grupos de 4 a 6 estudiantes",
-      "Acceso completo a la plataforma",
       "Horario flexible",
     ],
     price: `$${paymentTypes.INDIVIDUAL_BASICO.price}`,    
@@ -78,8 +76,6 @@ const individuales: TarjetaProps[] = [
     title: "Intermedio",
     description: [
       "10 clases mensuales",
-      "Grupos de 4 a 6 estudiantes",
-      "Acceso completo a la plataforma",
       "Horario flexible",
     ],
     price: `$${paymentTypes.INDIVIDUAL_INTERMEDIO.price}`,    
@@ -91,9 +87,7 @@ const individuales: TarjetaProps[] = [
   {
     title: "Intensivo",
     description: [
-      "10 clases mensuales",
-      "Grupos de 4 a 6 estudiantes",
-      "Acceso completo a la plataforma",
+      "12 clases mensuales",
       "Horario flexible",
     ],
     price: `$${paymentTypes.INDIVIDUAL_INTENSIVO.price}`,    
