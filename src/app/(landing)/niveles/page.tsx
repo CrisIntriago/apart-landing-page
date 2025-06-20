@@ -20,10 +20,38 @@ export default function Oferta() {
         </h2>
         <Carousel
           slides={[
-            { title: "A1", description: "Descripción 1", color: "#FFFFFF" },
-            { title: "A2", description: "Descripción 2", color: "#D1D1D1" },
-            { title: "B1", description: "Descripción 4", color: "#FFFFFF" },
-            { title: "B2", description: "Descripción 3", color: "#D1D1D1" },
+            {
+              title: "A1",
+              description: "Descripción 1",
+              color: "#FFFFFF",
+              item1: "Dialogar sobre temas cotidianos",
+              item2: "Interpretar expresiones comunes",
+              item3: "Formular preguntas esenciales",
+            },
+            {
+              title: "A2",
+              description: "Descripción 2",
+              color: "#D1D1D1",
+              item1: "Hablar con más fluidez sobre mi vida",
+              item2: "Comprender situaciones del día a día",
+              item3: "Participar en conversaciones simples",
+            },
+            {
+              title: "B1",
+              description: "Descripción 4",
+              color: "#FFFFFF",
+              item1: "Entender casi todo lo que escucho",
+              item2: "Participar en conversaciones serias",
+              item3: "Expresar opiniones con claridad",
+            },
+            {
+              title: "B2",
+              description: "Descripción 3",
+              color: "#D1D1D1",
+              item1: "Entender casi todo lo que escucho",
+              item2: "Participar en conversaciones serias",
+              item3: "Expresar opiniones con claridad",
+            },
           ]}
         />
       </div>

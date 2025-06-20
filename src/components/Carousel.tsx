@@ -5,12 +5,13 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import ApartButton from "./ApartButton";
-import { useRouter } from "next/navigation";
-
 interface SlideContent {
   title: string;
   description: string;
   color: string;
+  item1: string;
+  item2: string;
+  item3: string;
 }
 
 interface CarouselProps {
@@ -18,7 +19,6 @@ interface CarouselProps {
 }
 
 export default function Carousel({ slides }: CarouselProps) {
-  const router = useRouter();
   return (
     <div className="w-full px-6 md:px-12 lg:px-24">
       <Swiper
@@ -52,9 +52,9 @@ export default function Carousel({ slides }: CarouselProps) {
                 </h2>
 
                 <ul className="list-disc list-inside mt-3 text-base md:text-md text-left">
-                  <li>Dialogar sobre temas cotidianos.</li>
-                  <li>Interpretar expresiones comunes.</li>
-                  <li>Formular preguntas esenciales.</li>
+                  <li>{slide.item1}</li>
+                  <li>{slide.item2}</li>
+                  <li>{slide.item3}</li>
                 </ul>
 
                 <div className="mt-6 text-base md:text-md pb-4">
@@ -62,11 +62,12 @@ export default function Carousel({ slides }: CarouselProps) {
                 </div>
 
                 <div className="w-full flex justify-start">
-                  <div className="w-2/4">
+                  <div className="w-3/4">
+
                     <ApartButton
-                      text="Más información"
+                      text="Comprar"
                       tipo="ternary"
-                      onClick={() => {  router.push("/cursos")}}
+                      onClick={() => { }}
                     />
                   </div >
                 </div>
