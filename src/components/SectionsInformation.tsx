@@ -92,8 +92,8 @@ const SectionInformation: React.FC<SectionInformationProps> = ({
         <h1 className="text-2xl md:text-5xl font-bold">
           {eslogan}
         </h1>
-        <p className="text-lg md:text-xl pt-2 text-playfair">{autor}</p>
-        <p className="text-base md:text-base pt-8 text-justify md:px-12 px-10  text-playfair">
+        <p className="text-lg md:text-xl pt-2 text-roboto">{autor}</p>
+        <p className="text-base md:text-base pt-8 text-justify md:px-12 px-10  text-roboto">
           {descripcion}
         </p>
       </div>

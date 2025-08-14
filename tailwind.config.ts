@@ -10,7 +10,7 @@ const config: Config = {
       },
       fontFamily: {
         guru: ["Guru", "sans-serif"],
-        playfair: ["'Playfair Display'", "serif"],
+        roboto: ["Roboto", "serif"],
       },
     },
   },
