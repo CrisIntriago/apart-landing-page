@@ -77,18 +77,25 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Opciones del menú hamburguesa*/}
-              <div className="flex flex-col space-y-4 text-gray-300 pl-8 text-xl pt-4 " >
-                <a href="#" className="hover:text-gray-300">
-                  Misión
-                </a>
-                <a href="#" className="hover:text-gray-300">
-                  Historia
-                </a>
-                <a href="#" className="hover:text-gray-300">
-                  Contacto
-                </a>
-              </div>
+                {/* Opciones del menú hamburguesa*/}
+                <div className="flex flex-col space-y-4 text-gray-300 pl-8 text-xl pt-4">
+                <Link href={"/cursos"}>
+                  <div
+                  className="hover:text-gray-300"
+                  onClick={() => setIsMenuOpen(false)}
+                  >
+                  <p>Cursos</p>
+                  </div>
+                </Link>
+                <Link href={"/niveles"}>
+                  <div
+                  className="hover:text-gray-300"
+                  onClick={() => setIsMenuOpen(false)}
+                  >
+                  <p>Niveles</p>
+                  </div>
+                </Link>
+                </div>
             </div>
           </div>,
           document.getElementById("menu-portal")!
