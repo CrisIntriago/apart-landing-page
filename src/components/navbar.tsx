@@ -50,7 +50,7 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="px-6 py-2 rounded-full border-2 border-white bg-transparent text-white font-bold transition hover:bg-white hover:text-purple-700">
+          <button className="px-6 py-2 rounded-full border-2 border-white bg-transparent text-white font-bold transition ">
             Accede a la app
           </button>
         </a>
@@ -108,10 +108,9 @@ export default function Navbar() {
                   href={process.env.WEB_APP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="mt-6 px-6 py-2 rounded-full border-2 border-white bg-transparent text-white font-bold transition w-full text-lg text-center hover:bg-white block mx-auto select-none"
                 >
-                  <button className="mt-6 px-6 py-2 rounded-full border-2 border-white bg-transparent text-white font-bold transition w-11/12 text-lg hover:bg-white hover:text-purple-700">
-                    Acceder a la app
-                  </button>
+                  Acceder a la app
                 </a>
                 </div>
             </div>
