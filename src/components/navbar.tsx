@@ -34,7 +34,7 @@ export default function Navbar() {
       </Link>
 
       {/* Menú de navegación en escritorio */}
-      <div className="hidden md:flex items-center sm:space-x-28">
+      <div className="hidden md:flex items-center sm:space-x-12">
         <Link href={"/cursos"}>
           <div className="hover:text-gray-400 flex items-center space-x-4">
             <p>Cursos</p>
@@ -45,6 +45,15 @@ export default function Navbar() {
             <p>Niveles</p>
           </div>
         </Link>
+        <a
+          href={process.env.WEB_APP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="px-6 py-2 rounded-full border-2 border-white bg-transparent text-white font-bold transition hover:bg-white hover:text-purple-700">
+            Accede a la app
+          </button>
+        </a>
       </div>
       {/* Botón de hamburguesa */}
       <div className="md:hidden flex items-center">
@@ -95,6 +104,15 @@ export default function Navbar() {
                   <p>Niveles</p>
                   </div>
                 </Link>
+                <a
+                  href={process.env.WEB_APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="mt-6 px-6 py-2 rounded-full border-2 border-white bg-transparent text-white font-bold transition w-11/12 text-lg hover:bg-white hover:text-purple-700">
+                    Acceder a la app
+                  </button>
+                </a>
                 </div>
             </div>
           </div>,
